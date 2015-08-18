@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="uk.co.juliand.scannerinput"
+        version="1.0.0">
+
+  <name>Scanner Input</name>
+
+  <js-module src="www/ScannerInputPlugin.js" name="ScannerInputPlugin">
+    <clobbers target="navigator.scannerinput" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="ScannerInputPlugin">
+        <param name="android-package" value="uk.co.juliand.scannerinput.ScannerInputPlugin"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/ScannerInputPlugin.java" target-dir="src/uk/co/juliand/scannerinput/"/>
+    <source-file src="src/android/ScannerInputDialog.java" target-dir="src/uk/co/juliand/scannerinput/"/>
+  </platform>
+
+</plugin>
