@@ -4,7 +4,7 @@
         version="1.0.0">
 
   <name>Scanner Input</name>
-
+  <description>A plugin to be used for barcode scanners</description>
   <js-module src="www/ScannerInputPlugin.js" name="ScannerInputPlugin">
     <clobbers target="navigator.scannerinput" />
   </js-module>
