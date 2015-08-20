@@ -9,14 +9,7 @@ Such code has been encountered on a device with a built-in bar code scanner.
 ## Usage
 
 1. Install the plugin through the `cordova plugin add` command.
-2. Edit the `platforms/android/src/YOUR/PACKAGE/NAME/MainActivity.java` and add this method inside the class:
-```java
-	@Override
-	public boolean onKeyDown(int keyCode, android.view.KeyEvent event) {
-		return uk.co.juliand.scannerinput.ScannerInputPlugin.onKeyDown(keyCode, event);
-	}
-```
-3. Listen for the `scannerinput` event on `window`:
+2. Listen for the `scannerinput` event on `window`:
 ```javascript
 window.addEventListener('scannerinput', app.onScannerInput, false);
 ```

@@ -6,13 +6,23 @@ import org.json.*;
 public class ScannerInputPlugin extends CordovaPlugin implements ScannerInputDialog.ScannerInputListener {
 	
 	public static final int KEYCODE_SCAN = 220;
-	private static ScannerInputPlugin instance = null;
 	private static CallbackContext callback = null;
 	private CharSequence code = null;
 	
 	@Override
 	public void pluginInitialize() {
-		instance = this;
+		webView.getView().setOnKeyListener(new android.view.View.OnKeyListener() {
+			
+			@Override
+			public boolean onKey(android.view.View v, int keyCode, android.view.KeyEvent event) {
+				if (keyCode == KEYCODE_SCAN && event.getAction() == android.view.KeyEvent.ACTION_DOWN) {
+					new uk.co.juliand.scannerinput.ScannerInputDialog(cordova.getActivity(), ScannerInputPlugin.this).show();
+					return true;
+				}
+				return false;
+			}
+			
+		});
 	}
 	
     @Override
@@ -23,16 +33,6 @@ public class ScannerInputPlugin extends CordovaPlugin implements ScannerInputDia
     	} else {
     		return false;
     	}
-    }
-    
-    public static boolean onKeyDown(int keyCode, android.view.KeyEvent event) {
-		if (keyCode == KEYCODE_SCAN && event.getAction() == android.view.KeyEvent.ACTION_DOWN) {
-			if (instance != null)
-				new uk.co.juliand.scannerinput.ScannerInputDialog(instance.cordova.getActivity(), instance).show();
-			return true;
-		} else {
-			return false;
-		}
     }
     
     @Override
