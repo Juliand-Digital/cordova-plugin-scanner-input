@@ -11,7 +11,10 @@ Such code has been encountered on a device with a built-in bar code scanner.
 1. Install the plugin through the `cordova plugin add` command.
 2. Listen for the `scannerinput` event on `window`:
 ```javascript
-window.addEventListener('scannerinput', app.onScannerInput, false);
+function onScannerInput(event) {
+	console.log(event.input);
+}
+window.addEventListener('scannerinput', onScannerInput, false);
 ```
 
 ## Notes
