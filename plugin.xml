@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         id="uk.co.juliand.scannerinput"
-        version="1.0.0">
+        version="2.0.0">
 
   <name>Scanner Input</name>
-  <description>A plugin to be used for barcode scanners</description>
+  <description>Android input system for non-standard input devices like barcode scanners</description>
   <js-module src="www/ScannerInputPlugin.js" name="ScannerInputPlugin">
     <clobbers target="navigator.scannerinput" />
   </js-module>

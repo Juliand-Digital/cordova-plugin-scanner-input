@@ -1,7 +1,7 @@
 # cordova-plugin-scanner-input
 
-This is an *Apache Cordova* plugin which allows a web app to intercept text coming non-standard APIs.
-It creates an invisible temporary overlay when the device's trigger key is pressed.
+This is an *Apache Cordova* plugin which allows a web app to intercept text coming from non-standard APIs.
+It creates an invisible dialog which it focuses when the device's trigger key is pressed.
 Inside it, there is a standard `EditText` component which can receive input from code which erroneously looks for a focused input whose text to set.
 
 Such code has been encountered on a device with a built-in bar code scanner.
