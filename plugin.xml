@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         id="uk.co.juliand.scannerinput"
-        version="2.0.0">
+        version="2.0.1">
 
   <name>Scanner Input</name>
   <description>Android input system for non-standard input devices like barcode scanners</description>
@@ -18,7 +18,7 @@
     </config-file>
 
     <source-file src="src/android/ScannerInputPlugin.java" target-dir="src/uk/co/juliand/scannerinput/"/>
-    <source-file src="src/android/ScannerInputDialog.java" target-dir="src/uk/co/juliand/scannerinput/"/>
+    <source-file src="src/android/ScannerInputView.java" target-dir="src/uk/co/juliand/scannerinput/"/>
   </platform>
 
 </plugin>

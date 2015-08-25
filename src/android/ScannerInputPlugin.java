@@ -1,19 +1,20 @@
 package uk.co.juliand.scannerinput;
 
+import android.view.ViewGroup;
+
 import org.apache.cordova.*;
 import org.json.*;
 
-public class ScannerInputPlugin extends CordovaPlugin implements ScannerInputDialog.ScannerInputListener {
+public class ScannerInputPlugin extends CordovaPlugin implements ScannerInputView.ScannerInputListener {
 	private static CallbackContext callback = null;
-	private ScannerInputDialog dialog = null;
 
 	@Override
 	public void pluginInitialize() {
 		cordova.getActivity().runOnUiThread(new java.lang.Runnable() {
 			public void run() {
-				dialog = new ScannerInputDialog(cordova.getActivity(), ScannerInputPlugin.this);
-				webView.getView().setOnKeyListener(dialog.getScanKeyListener());
-				dialog.show();
+				ScannerInputView view = new ScannerInputView(cordova.getActivity(), ScannerInputPlugin.this);
+				((ViewGroup) webView.getView()).addView(view);
+				webView.getView().setOnKeyListener(view.getScanKeyListener());
 			}
 		});
 	}
